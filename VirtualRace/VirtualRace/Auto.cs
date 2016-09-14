@@ -140,5 +140,25 @@ namespace VirtualRace
                 return this._nombrePiloto;
             }
         }
+
+        public static int OrdenarPorFabricanteAscendente(Auto auto1, Auto auto2)
+        {
+            return string.Compare(auto1._fabricante.ToString(), auto2._fabricante.ToString());
+        }
+
+        public static int OrdenarPorPilotoAscendente(Auto auto1, Auto auto2)
+        {
+            return string.Compare(auto1._nombrePiloto, auto2._nombrePiloto);
+        }
+
+        public static int OrdenarPorFabricanteDescendente(Auto auto1, Auto auto2)
+        {
+            return string.Compare(auto2._fabricante.ToString(), auto1._fabricante.ToString());
+        }
+
+        public static int OrdenarPorPilotoDescendente(Auto auto1, Auto auto2)
+        {
+            return string.Compare(auto2._nombrePiloto, auto1._nombrePiloto);
+        }
     }
 }

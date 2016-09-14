@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gpbCarrera = new System.Windows.Forms.GroupBox();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.btnCrearCarrera = new System.Windows.Forms.Button();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtLugar = new System.Windows.Forms.TextBox();
@@ -36,26 +37,31 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.gpbListadoAutos = new System.Windows.Forms.GroupBox();
+            this.lsbAutos = new System.Windows.Forms.ListBox();
             this.gpbAuto = new System.Windows.Forms.GroupBox();
+            this.btnAgregarAuto = new System.Windows.Forms.Button();
+            this.lblFabricante = new System.Windows.Forms.Label();
+            this.lblNombrePioloto = new System.Windows.Forms.Label();
             this.cmbFabricante = new System.Windows.Forms.ComboBox();
             this.txtNombrePiloto = new System.Windows.Forms.TextBox();
             this.gpbResultado = new System.Windows.Forms.GroupBox();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.lblNombrePioloto = new System.Windows.Forms.Label();
-            this.lblFabricante = new System.Windows.Forms.Label();
-            this.btnAgregarAuto = new System.Windows.Forms.Button();
-            this.lsbAutos = new System.Windows.Forms.ListBox();
-            this.cmbCorrerCarreraPor = new System.Windows.Forms.ComboBox();
-            this.lblCorrerCarreraPor = new System.Windows.Forms.Label();
-            this.numCantidad = new System.Windows.Forms.NumericUpDown();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.btnCorrerCarrera = new System.Windows.Forms.Button();
             this.txtResultado = new System.Windows.Forms.TextBox();
+            this.btnCorrerCarrera = new System.Windows.Forms.Button();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.numCantidad = new System.Windows.Forms.NumericUpDown();
+            this.lblCorrerCarreraPor = new System.Windows.Forms.Label();
+            this.cmbCorrerCarreraPor = new System.Windows.Forms.ComboBox();
+            this.gpbOrdenar = new System.Windows.Forms.GroupBox();
+            this.cmbOrdenarPor = new System.Windows.Forms.ComboBox();
+            this.rbtnAscendente = new System.Windows.Forms.RadioButton();
+            this.rbtnDescendente = new System.Windows.Forms.RadioButton();
+            this.btnOrdenar = new System.Windows.Forms.Button();
             this.gpbCarrera.SuspendLayout();
             this.gpbListadoAutos.SuspendLayout();
             this.gpbAuto.SuspendLayout();
             this.gpbResultado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
+            this.gpbOrdenar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbCarrera
@@ -73,6 +79,15 @@
             this.gpbCarrera.TabIndex = 0;
             this.gpbCarrera.TabStop = false;
             this.gpbCarrera.Text = "&Carrera";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(304, 32);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(40, 13);
+            this.lblFecha.TabIndex = 7;
+            this.lblFecha.Text = "&Fecha:";
             // 
             // btnCrearCarrera
             // 
@@ -127,12 +142,20 @@
             // gpbListadoAutos
             // 
             this.gpbListadoAutos.Controls.Add(this.lsbAutos);
-            this.gpbListadoAutos.Location = new System.Drawing.Point(325, 118);
+            this.gpbListadoAutos.Location = new System.Drawing.Point(352, 118);
             this.gpbListadoAutos.Name = "gpbListadoAutos";
-            this.gpbListadoAutos.Size = new System.Drawing.Size(249, 375);
+            this.gpbListadoAutos.Size = new System.Drawing.Size(222, 211);
             this.gpbListadoAutos.TabIndex = 1;
             this.gpbListadoAutos.TabStop = false;
             this.gpbListadoAutos.Text = "&Listado de autos";
+            // 
+            // lsbAutos
+            // 
+            this.lsbAutos.FormattingEnabled = true;
+            this.lsbAutos.Location = new System.Drawing.Point(6, 20);
+            this.lsbAutos.Name = "lsbAutos";
+            this.lsbAutos.Size = new System.Drawing.Size(210, 186);
+            this.lsbAutos.TabIndex = 0;
             // 
             // gpbAuto
             // 
@@ -143,24 +166,52 @@
             this.gpbAuto.Controls.Add(this.txtNombrePiloto);
             this.gpbAuto.Location = new System.Drawing.Point(12, 118);
             this.gpbAuto.Name = "gpbAuto";
-            this.gpbAuto.Size = new System.Drawing.Size(307, 161);
+            this.gpbAuto.Size = new System.Drawing.Size(334, 140);
             this.gpbAuto.TabIndex = 1;
             this.gpbAuto.TabStop = false;
             this.gpbAuto.Text = "&Auto";
+            // 
+            // btnAgregarAuto
+            // 
+            this.btnAgregarAuto.Location = new System.Drawing.Point(189, 53);
+            this.btnAgregarAuto.Name = "btnAgregarAuto";
+            this.btnAgregarAuto.Size = new System.Drawing.Size(106, 46);
+            this.btnAgregarAuto.TabIndex = 7;
+            this.btnAgregarAuto.Text = "&Agregar auto";
+            this.btnAgregarAuto.UseVisualStyleBackColor = true;
+            this.btnAgregarAuto.Click += new System.EventHandler(this.btnAgregarAuto_Click);
+            // 
+            // lblFabricante
+            // 
+            this.lblFabricante.AutoSize = true;
+            this.lblFabricante.Location = new System.Drawing.Point(25, 77);
+            this.lblFabricante.Name = "lblFabricante";
+            this.lblFabricante.Size = new System.Drawing.Size(60, 13);
+            this.lblFabricante.TabIndex = 6;
+            this.lblFabricante.Text = "&Fabricante:";
+            // 
+            // lblNombrePioloto
+            // 
+            this.lblNombrePioloto.AutoSize = true;
+            this.lblNombrePioloto.Location = new System.Drawing.Point(25, 30);
+            this.lblNombrePioloto.Name = "lblNombrePioloto";
+            this.lblNombrePioloto.Size = new System.Drawing.Size(75, 13);
+            this.lblNombrePioloto.TabIndex = 5;
+            this.lblNombrePioloto.Text = "&Nombre piloto:";
             // 
             // cmbFabricante
             // 
             this.cmbFabricante.FormattingEnabled = true;
             this.cmbFabricante.Location = new System.Drawing.Point(25, 93);
             this.cmbFabricante.Name = "cmbFabricante";
-            this.cmbFabricante.Size = new System.Drawing.Size(100, 21);
+            this.cmbFabricante.Size = new System.Drawing.Size(122, 21);
             this.cmbFabricante.TabIndex = 4;
             // 
             // txtNombrePiloto
             // 
             this.txtNombrePiloto.Location = new System.Drawing.Point(25, 46);
             this.txtNombrePiloto.Name = "txtNombrePiloto";
-            this.txtNombrePiloto.Size = new System.Drawing.Size(100, 20);
+            this.txtNombrePiloto.Size = new System.Drawing.Size(122, 20);
             this.txtNombrePiloto.TabIndex = 3;
             this.txtNombrePiloto.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -172,74 +223,39 @@
             this.gpbResultado.Controls.Add(this.numCantidad);
             this.gpbResultado.Controls.Add(this.lblCorrerCarreraPor);
             this.gpbResultado.Controls.Add(this.cmbCorrerCarreraPor);
-            this.gpbResultado.Location = new System.Drawing.Point(12, 285);
+            this.gpbResultado.Location = new System.Drawing.Point(12, 264);
             this.gpbResultado.Name = "gpbResultado";
-            this.gpbResultado.Size = new System.Drawing.Size(307, 208);
+            this.gpbResultado.Size = new System.Drawing.Size(334, 229);
             this.gpbResultado.TabIndex = 1;
             this.gpbResultado.TabStop = false;
             this.gpbResultado.Text = "&Resultados";
             // 
-            // lblFecha
+            // txtResultado
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(304, 32);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(40, 13);
-            this.lblFecha.TabIndex = 7;
-            this.lblFecha.Text = "&Fecha:";
+            this.txtResultado.Location = new System.Drawing.Point(6, 115);
+            this.txtResultado.Multiline = true;
+            this.txtResultado.Name = "txtResultado";
+            this.txtResultado.Size = new System.Drawing.Size(322, 101);
+            this.txtResultado.TabIndex = 5;
             // 
-            // lblNombrePioloto
+            // btnCorrerCarrera
             // 
-            this.lblNombrePioloto.AutoSize = true;
-            this.lblNombrePioloto.Location = new System.Drawing.Point(25, 30);
-            this.lblNombrePioloto.Name = "lblNombrePioloto";
-            this.lblNombrePioloto.Size = new System.Drawing.Size(75, 13);
-            this.lblNombrePioloto.TabIndex = 5;
-            this.lblNombrePioloto.Text = "&Nombre piloto:";
+            this.btnCorrerCarrera.Location = new System.Drawing.Point(158, 51);
+            this.btnCorrerCarrera.Name = "btnCorrerCarrera";
+            this.btnCorrerCarrera.Size = new System.Drawing.Size(155, 54);
+            this.btnCorrerCarrera.TabIndex = 4;
+            this.btnCorrerCarrera.Text = "¡&Correr carrera!";
+            this.btnCorrerCarrera.UseVisualStyleBackColor = true;
+            this.btnCorrerCarrera.Click += new System.EventHandler(this.btnCorrerCarrera_Click);
             // 
-            // lblFabricante
+            // lblCantidad
             // 
-            this.lblFabricante.AutoSize = true;
-            this.lblFabricante.Location = new System.Drawing.Point(25, 77);
-            this.lblFabricante.Name = "lblFabricante";
-            this.lblFabricante.Size = new System.Drawing.Size(60, 13);
-            this.lblFabricante.TabIndex = 6;
-            this.lblFabricante.Text = "&Fabricante:";
-            // 
-            // btnAgregarAuto
-            // 
-            this.btnAgregarAuto.Location = new System.Drawing.Point(174, 65);
-            this.btnAgregarAuto.Name = "btnAgregarAuto";
-            this.btnAgregarAuto.Size = new System.Drawing.Size(98, 37);
-            this.btnAgregarAuto.TabIndex = 7;
-            this.btnAgregarAuto.Text = "&Agregar auto";
-            this.btnAgregarAuto.UseVisualStyleBackColor = true;
-            this.btnAgregarAuto.Click += new System.EventHandler(this.btnAgregarAuto_Click);
-            // 
-            // lsbAutos
-            // 
-            this.lsbAutos.FormattingEnabled = true;
-            this.lsbAutos.Location = new System.Drawing.Point(7, 20);
-            this.lsbAutos.Name = "lsbAutos";
-            this.lsbAutos.Size = new System.Drawing.Size(236, 342);
-            this.lsbAutos.TabIndex = 0;
-            // 
-            // cmbCorrerCarreraPor
-            // 
-            this.cmbCorrerCarreraPor.FormattingEnabled = true;
-            this.cmbCorrerCarreraPor.Location = new System.Drawing.Point(6, 44);
-            this.cmbCorrerCarreraPor.Name = "cmbCorrerCarreraPor";
-            this.cmbCorrerCarreraPor.Size = new System.Drawing.Size(121, 21);
-            this.cmbCorrerCarreraPor.TabIndex = 0;
-            // 
-            // lblCorrerCarreraPor
-            // 
-            this.lblCorrerCarreraPor.AutoSize = true;
-            this.lblCorrerCarreraPor.Location = new System.Drawing.Point(6, 29);
-            this.lblCorrerCarreraPor.Name = "lblCorrerCarreraPor";
-            this.lblCorrerCarreraPor.Size = new System.Drawing.Size(92, 13);
-            this.lblCorrerCarreraPor.TabIndex = 1;
-            this.lblCorrerCarreraPor.Text = "&Correr carrera por:";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(6, 72);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(52, 13);
+            this.lblCantidad.TabIndex = 3;
+            this.lblCantidad.Text = "&Cantidad:";
             // 
             // numCantidad
             // 
@@ -264,44 +280,88 @@
             0});
             this.numCantidad.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // lblCantidad
+            // lblCorrerCarreraPor
             // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(6, 72);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(52, 13);
-            this.lblCantidad.TabIndex = 3;
-            this.lblCantidad.Text = "&Cantidad:";
+            this.lblCorrerCarreraPor.AutoSize = true;
+            this.lblCorrerCarreraPor.Location = new System.Drawing.Point(6, 29);
+            this.lblCorrerCarreraPor.Name = "lblCorrerCarreraPor";
+            this.lblCorrerCarreraPor.Size = new System.Drawing.Size(92, 13);
+            this.lblCorrerCarreraPor.TabIndex = 1;
+            this.lblCorrerCarreraPor.Text = "&Correr carrera por:";
             // 
-            // btnCorrerCarrera
+            // cmbCorrerCarreraPor
             // 
-            this.btnCorrerCarrera.Location = new System.Drawing.Point(150, 51);
-            this.btnCorrerCarrera.Name = "btnCorrerCarrera";
-            this.btnCorrerCarrera.Size = new System.Drawing.Size(142, 54);
-            this.btnCorrerCarrera.TabIndex = 4;
-            this.btnCorrerCarrera.Text = "¡&Correr carrera!";
-            this.btnCorrerCarrera.UseVisualStyleBackColor = true;
-            this.btnCorrerCarrera.Click += new System.EventHandler(this.btnCorrerCarrera_Click);
+            this.cmbCorrerCarreraPor.FormattingEnabled = true;
+            this.cmbCorrerCarreraPor.Location = new System.Drawing.Point(6, 44);
+            this.cmbCorrerCarreraPor.Name = "cmbCorrerCarreraPor";
+            this.cmbCorrerCarreraPor.Size = new System.Drawing.Size(121, 21);
+            this.cmbCorrerCarreraPor.TabIndex = 0;
             // 
-            // txtResultado
+            // gpbOrdenar
             // 
-            this.txtResultado.Location = new System.Drawing.Point(6, 115);
-            this.txtResultado.Multiline = true;
-            this.txtResultado.Name = "txtResultado";
-            this.txtResultado.Size = new System.Drawing.Size(286, 80);
-            this.txtResultado.TabIndex = 5;
+            this.gpbOrdenar.Controls.Add(this.btnOrdenar);
+            this.gpbOrdenar.Controls.Add(this.rbtnDescendente);
+            this.gpbOrdenar.Controls.Add(this.rbtnAscendente);
+            this.gpbOrdenar.Controls.Add(this.cmbOrdenarPor);
+            this.gpbOrdenar.Location = new System.Drawing.Point(352, 331);
+            this.gpbOrdenar.Name = "gpbOrdenar";
+            this.gpbOrdenar.Size = new System.Drawing.Size(223, 162);
+            this.gpbOrdenar.TabIndex = 2;
+            this.gpbOrdenar.TabStop = false;
+            this.gpbOrdenar.Text = "&Ordenar";
+            // 
+            // cmbOrdenarPor
+            // 
+            this.cmbOrdenarPor.FormattingEnabled = true;
+            this.cmbOrdenarPor.Location = new System.Drawing.Point(47, 34);
+            this.cmbOrdenarPor.Name = "cmbOrdenarPor";
+            this.cmbOrdenarPor.Size = new System.Drawing.Size(121, 21);
+            this.cmbOrdenarPor.TabIndex = 0;
+            // 
+            // rbtnAscendente
+            // 
+            this.rbtnAscendente.AutoSize = true;
+            this.rbtnAscendente.Location = new System.Drawing.Point(15, 71);
+            this.rbtnAscendente.Name = "rbtnAscendente";
+            this.rbtnAscendente.Size = new System.Drawing.Size(82, 17);
+            this.rbtnAscendente.TabIndex = 1;
+            this.rbtnAscendente.TabStop = true;
+            this.rbtnAscendente.Text = "&Ascendente";
+            this.rbtnAscendente.UseVisualStyleBackColor = true;
+            // 
+            // rbtnDescendente
+            // 
+            this.rbtnDescendente.AutoSize = true;
+            this.rbtnDescendente.Location = new System.Drawing.Point(117, 71);
+            this.rbtnDescendente.Name = "rbtnDescendente";
+            this.rbtnDescendente.Size = new System.Drawing.Size(89, 17);
+            this.rbtnDescendente.TabIndex = 2;
+            this.rbtnDescendente.TabStop = true;
+            this.rbtnDescendente.Text = "&Descendente";
+            this.rbtnDescendente.UseVisualStyleBackColor = true;
+            // 
+            // btnOrdenar
+            // 
+            this.btnOrdenar.Location = new System.Drawing.Point(56, 106);
+            this.btnOrdenar.Name = "btnOrdenar";
+            this.btnOrdenar.Size = new System.Drawing.Size(102, 43);
+            this.btnOrdenar.TabIndex = 3;
+            this.btnOrdenar.Text = "&Ordenar";
+            this.btnOrdenar.UseVisualStyleBackColor = true;
+            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 499);
+            this.Controls.Add(this.gpbOrdenar);
             this.Controls.Add(this.gpbListadoAutos);
             this.Controls.Add(this.gpbAuto);
             this.Controls.Add(this.gpbResultado);
             this.Controls.Add(this.gpbCarrera);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Virtual Race";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gpbCarrera.ResumeLayout(false);
             this.gpbCarrera.PerformLayout();
@@ -311,6 +371,8 @@
             this.gpbResultado.ResumeLayout(false);
             this.gpbResultado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
+            this.gpbOrdenar.ResumeLayout(false);
+            this.gpbOrdenar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -340,6 +402,11 @@
         private System.Windows.Forms.Label lblCorrerCarreraPor;
         private System.Windows.Forms.ComboBox cmbCorrerCarreraPor;
         private System.Windows.Forms.TextBox txtResultado;
+        private System.Windows.Forms.GroupBox gpbOrdenar;
+        private System.Windows.Forms.Button btnOrdenar;
+        private System.Windows.Forms.RadioButton rbtnDescendente;
+        private System.Windows.Forms.RadioButton rbtnAscendente;
+        private System.Windows.Forms.ComboBox cmbOrdenarPor;
     }
 }
 

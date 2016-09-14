@@ -20,9 +20,9 @@ namespace VirtualRace
 
         private static Random randomKilometros;
         private static Random randomTiempo;
-        public string nombre;
-        public string fecha;
-        public string lugar;
+        private string _nombre;
+        private string _fecha;
+        private string _lugar;
 
         #region Constructores
 
@@ -41,9 +41,9 @@ namespace VirtualRace
 
         public Carrera(string nombre, string lugar, string fecha)
         {
-            this.nombre = nombre;
-            this.lugar = lugar;
-            this.fecha = fecha;
+            this._nombre = nombre;
+            this._lugar = lugar;
+            this._fecha = fecha;
 
             this.listaDeAutos = new List<Auto>();
         }
@@ -118,18 +118,22 @@ namespace VirtualRace
             Console.WriteLine("El que más recorrió fue un {0} y la distancia fue {1}", mayor.Fabricante, (int)mayor.ObtenerTiempo());
             Console.WriteLine("El que menos recorri´0 fue un {0} y la distancia fue {1}", menor.Fabricante, (int)menor.ObtenerTiempo());
 
-            foreach (Auto item in this.listaDeAutos)
-            {
-                item.volverAZero();
-            }
+            
 
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("Auto con menor tiempo: " + menor.Fabricante);
             sb.AppendLine("Piloto: " + menor.NombrePiloto);
+            sb.AppendLine("Tiempo demorado: " + (int)menor.ObtenerTiempo());
             sb.AppendLine("");
             sb.AppendLine("Auto con mayor tiempo: " + mayor.Fabricante);
             sb.AppendLine("Piloto: " + mayor.NombrePiloto);
+            sb.AppendLine("Tiempo demorado: " + (int)mayor.ObtenerTiempo());
+
+            foreach (Auto item in this.listaDeAutos)
+            {
+                item.volverAZero();
+            }
 
             return sb.ToString();
         }
@@ -262,18 +266,22 @@ namespace VirtualRace
                this.auto5.VolverACero();
                this.auto6.VolverACero();
                 */
-            foreach (Auto item in this.listaDeAutos)
-            {
-                item.volverAZero();
-            }
+            
 
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("Auto con mayor kilometros: " + mayor.Fabricante);
             sb.AppendLine("Piloto: " + mayor.NombrePiloto);
+            sb.AppendLine("Kilometros recorridos: " + (int)mayor.ObtenerKilometros());
             sb.AppendLine("");
             sb.AppendLine("Auto con menor kilometros: " + menor.Fabricante);
             sb.AppendLine("Piloto: " + menor.NombrePiloto);
+            sb.AppendLine("Kilometros recorridos: " + (int)menor.ObtenerKilometros());
+
+            foreach (Auto item in this.listaDeAutos)
+            {
+                item.volverAZero();
+            }
 
             return sb.ToString();
         }

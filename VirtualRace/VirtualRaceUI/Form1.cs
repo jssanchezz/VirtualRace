@@ -33,6 +33,13 @@ namespace VirtualRaceUI
             this.cmbCorrerCarreraPor.Items.Add("Kilometros");
             this.cmbCorrerCarreraPor.SelectedIndex = 1;
             this.cmbCorrerCarreraPor.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            this.cmbOrdenarPor.Items.Add("Piloto");
+            this.cmbOrdenarPor.Items.Add("Fabricante");
+            this.cmbOrdenarPor.SelectedIndex = 1;
+            this.cmbOrdenarPor.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.rbtnAscendente.Select();
+            this.gpbOrdenar.Enabled = false;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -69,6 +76,7 @@ namespace VirtualRaceUI
             cargarListado();
 
             this.gpbResultado.Enabled = true;
+            this.gpbOrdenar.Enabled = true;
         }
 
         private void cargarListado()
@@ -105,6 +113,46 @@ namespace VirtualRaceUI
                     Kilometros km = (int)this.numCantidad.Value;
                     
                     this.txtResultado.Text = this._miCarrera.correrCarrera(km);
+
+                    break;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            string ordenarPor = this.cmbOrdenarPor.Text;
+
+            switch (ordenarPor)
+            {
+                case "Piloto":
+
+                    if (this.rbtnAscendente.Checked)
+                        this._miCarrera.listaDeAutos.Sort(Auto.OrdenarPorPilotoAscendente);
+                    else
+                        this._miCarrera.listaDeAutos.Sort(Auto.OrdenarPorPilotoDescendente);
+
+                    this.cargarListado();
+
+                    break;
+
+                case "Fabricante":
+
+                    if (this.rbtnAscendente.Checked)
+                        this._miCarrera.listaDeAutos.Sort(Auto.OrdenarPorFabricanteAscendente);
+                    else
+                        this._miCarrera.listaDeAutos.Sort(Auto.OrdenarPorFabricanteDescendente);
+
+                    this.cargarListado();
 
                     break;
             }
