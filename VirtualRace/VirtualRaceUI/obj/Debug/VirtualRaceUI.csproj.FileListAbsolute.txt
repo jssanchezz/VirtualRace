@@ -1,0 +1,11 @@
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\bin\Debug\VirtualRaceUI.exe.config
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\bin\Debug\VirtualRaceUI.exe
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\bin\Debug\VirtualRaceUI.pdb
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\obj\Debug\VirtualRaceUI.csprojResolveAssemblyReference.cache
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\obj\Debug\VirtualRaceUI.Form1.resources
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\obj\Debug\VirtualRaceUI.Properties.Resources.resources
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\obj\Debug\VirtualRaceUI.csproj.GenerateResource.Cache
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\obj\Debug\VirtualRaceUI.exe
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\obj\Debug\VirtualRaceUI.pdb
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\bin\Debug\VirtualRace.exe
+C:\Users\Juan\Desktop\TPS_LABII\VirtualRace\VirtualRaceUI\bin\Debug\VirtualRace.pdb
